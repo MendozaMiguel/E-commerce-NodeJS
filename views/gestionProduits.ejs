@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+
+<% include squelette/header.ejs %>
+
+<body>
+<% include ./squelette/navbar.ejs %>
+
+<div class="container-fluid">
+
+    <h1>Gestion des Produits</h1>
+    <br>
+    <h2>Ajouter un produit: <a class="btn btn-success" href="/gestion/produit/ajouter">Ajouter</a></h2>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Catégorie</th>
+            <th>Actions</th>
+            </thead>
+
+            <% resultat.forEach(function(item){ %>
+            <tr>
+                <td><%= item.nom %></td>
+                <td><%= item.description %></td>
+                <td><%= item.prix %>€</td>
+                <td><%= item.categorie %></td>
+                <td width=300>
+                    <a class="btn btn-info" href="/gestion/produit/voir/<%= item.id %>">Voir</a>
+                    <a class="btn btn-warning" href="/gestion/produit/modifier/<%= item.id %>">Modifier</a>
+                    <form action="/gestion/produit/<%= item.id %>" method="post">
+
+                        <input type="hidden" name="_method" value="delete"/>
+                        <button type="submit" class="btn btn-danger">Effacer</button>
+
+                    </form>
+                </td>
+
+            </tr>
+            <% }) %>
+
+
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

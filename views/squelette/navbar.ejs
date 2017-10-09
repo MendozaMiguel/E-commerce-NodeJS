@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Site</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Accueil</a></li>
+                <% if(admin){ %>
+
+                <li><a href="/gestion/produit">Gestion Produit</a></li>
+                <li><a href="/gestion/utilisateurs">Gestion Utilisateurs </a></li>
+
+                <% }  %>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <% if(!connecte){ %>
+                <li><a href="/inscription"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+
+                <li><a href="/connexion"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+
+                <% } else{ %>
+
+                <li><a href="/deconnexion"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
+                <li><a href="/panier"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+
+
+                <% } %>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<br>
+<br>
+<br>

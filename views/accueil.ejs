@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+
+<% include ./squelette/header.ejs %>
+
+<body>
+<% include ./squelette/navbar.ejs %>
+
+<h1>Accueil</h1>
+
+<div class="container-fluid ">
+    <div class="row">
+
+
+        <% resultat.forEach(function(item){ %>
+        <div class="col-sm-6 col-md-4">
+            <br>
+            <p><%= item.nom %></p>
+            <img class="img-responsive" src="/public/images/img_<%= item.image %>" style="height: 250px;">
+            <p><%= item.prix %>€</p>
+            <p><%= item.description %></p>
+            <a href="#" class="btn btn-button btn-warning"
+               onclick="event.preventDefault()
+               document.getElementById('ajoutPanier<%=item.id%>').submit()">
+                Ajouter au Panier
+            </a>
+            <form id="ajoutPanier<%=item.id%>" action="/panier/ajouter/<%= item.id %>" method="POST"
+                  style="display: none;">
+            </form>
+        </div>
+        <% }) %>
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

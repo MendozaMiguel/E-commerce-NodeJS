@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+
+<% include squelette/header.ejs %>
+
+<body>
+<% include ./squelette/navbar.ejs %>
+
+<div class="container-fluid">
+    <h1>Gestion Utilisateurs </h1>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>Portable</th>
+            <th>Admin</th>
+
+            </thead>
+            <% resultat.forEach(function(item){ %>
+            <tr>
+                <td><%= item.nom %></td>
+                <td><%= item.prenom %></td>
+                <td><%= item.email %></td>
+                <td><%= item.portable %></td>
+
+                <td width=300>
+
+                        <% if(item.admin === 0){ %>
+                    <form action="/gestion/utilisateurs/admin/<%=item.id%>" method="post">
+
+                            <button type="submit" class="btn btn-danger">NON</button>
+
+                    </form>
+                        <% } else{ %>
+
+                    <form action="/gestion/utilisateurs/pasAdmin/<%=item.id%>" method="post">
+
+                        <button type="submit" class="btn btn-success">OUI</button>
+
+                    </form>
+
+                        <% } %>
+
+
+                </td>
+
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

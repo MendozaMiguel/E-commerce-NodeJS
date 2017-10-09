@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang=”fr”>
+
+<% include squelette/header.ejs %>
+<body>
+
+<div class="container">
+    <div class="jumbotron">
+        <h2>Ajouter un Produit</h2>
+
+    </div>
+    <form action="/gestion/produit/ajouter" method="POST" encType="multipart/form-data">
+
+        <div class="form-group">
+            <label for="nom">Nom:</label>
+            <input type="text" class="form-control" id="nom" name="nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" name="description" required>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="prix">Prix:</label>
+            <input type="number" class="form-control" id=prix name="prix" required>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Choisir l'image:</label>
+            <input type="file" id="image" name="image" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categorie">Categorie:</label>
+            <input type="text" class="form-control" id="categorie" name="categorie" required>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-default">Valider</button>
+    </form>
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

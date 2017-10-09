@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+
+
+<% include squelette/header.ejs%>
+
+
+<body>
+
+<div class="container-fluid">
+
+
+    <% resultat.forEach(function(item){ %>
+
+   <h1>Produit: <%= item.nom%></h1>
+
+    <h2>Description :    <%= item.description%></h2>
+
+    <h2>Prix :    <%= item.prix%> €</h2>
+
+    <h2> Categorie :    <%= item.categorie%> </h2>
+    <img src="/public/images/img_<%= item.image%>" class="img-responsive" style="height: 250px;">
+
+
+
+
+    <%}) %>
+
+
+    <a class="btn btn-primary" href="/gestion/produit">Retour</a>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

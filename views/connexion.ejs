@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=”fr”>
+
+<% include ./squelette/header.ejs %>
+<body>
+<% include ./squelette/navbar.ejs%>
+
+
+<form class="form-horizontal" method="POST" action="/connexion">
+    <fieldset>
+
+        <legend>Connexion</legend>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="email">Email</label>
+            <div class="col-md-4">
+                <input id="email" name="email" type="text" class="form-control input-md" required>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="motdepasse">Mot de passe</label>
+            <div class="col-md-4">
+                <input id="motdepasse" name="motdepasse" type="password" class="form-control input-md" required>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for=""></label>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="submit">Connexion</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

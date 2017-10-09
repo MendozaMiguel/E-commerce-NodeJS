@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang=”fr”>
+
+<% include squelette/header.ejs %>
+<body>
+<% include ./squelette/navbar.ejs %>
+
+<form class="form-horizontal" method="POST" action="/inscription">
+    <fieldset>
+
+        <legend>Inscription</legend>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="nom">Nom</label>
+            <div class="col-md-4">
+                <input id="nom" name="nom" type="text" class="form-control input-md" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="email">Prenom</label>
+            <div class="col-md-4">
+                <input id="prenom" name="prenom" type="text" class="form-control input-md" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="email">Email</label>
+            <div class="col-md-4">
+                <input id="email" name="email" type="text" class="form-control input-md" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="motdepasse">Mot de passe</label>
+            <div class="col-md-4">
+                <input id="motdepasse" name="motdepasse" type="password" class="form-control input-md" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="portable">Portable</label>
+            <div class="col-md-4">
+                <input id="portable" name="portable" type="tel" pattern="(0|\\+33|0033)[1-9][0-9]{8}"
+                       class="form-control input-md" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="adresse">Adresse</label>
+            <div class="col-md-4">
+                <input id="adresse" name="adresse" type="text"
+                       class="form-control input-md" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="portable">Code Postal</label>
+            <div class="col-md-4">
+                <input id="postal" name="postal" type="number" class="form-control input-md" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for=""></label>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="submit">Inscription</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+
+</body>
+</html>
